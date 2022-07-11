@@ -1,7 +1,7 @@
 ---
 date: '3'
 title: 'Placeholder'
-cover: './course-card.png'
+cover: './lorem2.jpg'
 external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
 cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
 tech:
