@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\content",
+    "\\content\\featured",
+    "\\content\\featured\\HalcyonTheme",
+    "\\content\\featured\\SpotifyProfile",
+    "\\content\\featured\\SpotifyProfileV2",
+    "\\content\\jobs\\Boxnet",
+    "\\content\\jobs\\Skandia",
+    "\\src",
+    "\\src\\pages"
+  ],
+  "SelectedNode": "\\src\\components\\sections\\hero.js",
+  "PreviewInSolutionExplorer": false
+}
