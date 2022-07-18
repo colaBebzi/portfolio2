@@ -74,7 +74,7 @@ const StyledNav = styled.nav`
       }
     }
 
-    animation: spin 8s linear infinite;
+    animation: spin 16s linear infinite;
 
     a {
       color: var(--green);

@@ -174,7 +174,7 @@ const ArchivePage = ({ location, data }) => {
                     date,
                     github,
                     external,
-                    ios,
+                    //ios,
                     android,
                     title,
                     tech,
@@ -256,7 +256,6 @@ export const pageQuery = graphql`
             tech
             github
             external
-            ios
             android
             company
           }

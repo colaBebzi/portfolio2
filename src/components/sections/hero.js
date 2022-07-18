@@ -70,7 +70,7 @@ const Hero = () => {
         <a href="https://www.skandia.se/" target="_blank" rel="noreferrer">
           Skandiabanken
         </a>
-        . Also a C#-lover.
+        .
       </p>
     </>
   );
