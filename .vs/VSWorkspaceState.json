@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\content",
-    "\\content\\posts",
     "\\content\\projects",
-    "\\content\\projects\\images",
     "\\src",
+    "\\src\\components",
+    "\\src\\components\\icons",
     "\\src\\images",
-    "\\src\\templates",
-    "\\static",
-    "\\static\\slides"
+    "\\src\\pages",
+    "\\src\\pages\\pensieve",
+    "\\src\\styles"
   ],
-  "SelectedNode": "\\content\\posts",
+  "SelectedNode": "\\src\\components\\icons\\loader.js",
   "PreviewInSolutionExplorer": false
 }
