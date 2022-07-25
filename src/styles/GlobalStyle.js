@@ -75,6 +75,11 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--navy);
+    background-image: url('../images/logo.png');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     color: var(--slate);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
@@ -179,11 +184,31 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
+.glass-effect {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20x);
+    backdrop-filter: blur(20x);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+    padding: 20px !important;
+  }
+
+.glass-effect-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20x);
+    backdrop-filter: blur(20x);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 32px;
+    padding: 40px !important;
+  }
+
   .numbered-heading {
     display: flex;
     align-items: center;
     position: relative;
-    margin: 10px 0 40px;
+    margin: 10px 0 35px;
     width: 100%;
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;

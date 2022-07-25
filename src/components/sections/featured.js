@@ -347,7 +347,7 @@ const Featured = () => {
 
   return (
     <section id="projects">
-      <h2 className="numbered-heading" ref={revealTitle}>
+      <h2 className="numbered-heading glass-effect" ref={revealTitle}>
         Some Things I’ve Built
       </h2>
 

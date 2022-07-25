@@ -136,6 +136,19 @@ const StyledLinks = styled.div`
     margin-left: 15px;
     font-size: var(--fz-xs);
   }
+
+ .glass {
+
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      -webkit-backdrop-filter: blur(20x);
+      backdrop-filter: blur(20x);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 32px;
+      padding: 20px !important;
+      transition: background-color 2s ease-out;
+  }
+
 `;
 
 const Nav = ({ isHome }) => {
@@ -168,6 +181,7 @@ const Nav = ({ isHome }) => {
   const timeout = isHome ? loaderDelay : 0;
   const fadeClass = isHome ? 'fade' : '';
   const fadeDownClass = isHome ? 'fadedown' : '';
+  //const glass = isHome ? 'glass' : '';
 
   const Logo = (
     <div className="logo" tabIndex="-1">

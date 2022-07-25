@@ -17,6 +17,8 @@ const StyledAboutSection = styled.section`
       display: block;
     }
   }
+
+
 `;
 const StyledText = styled.div`
   ul.skills-list {
@@ -129,7 +131,7 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading glass-effect">About Me</h2>
 
       <div className="inner">
         <StyledText>
