@@ -75,11 +75,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--navy);
-    background-image: url('../images/logo.png');
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
     color: var(--slate);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
