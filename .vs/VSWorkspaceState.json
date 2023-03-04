@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\content",
+    "\\content\\jobs",
+    "\\content\\posts",
     "\\content\\projects",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\icons",
     "\\src\\images",
     "\\src\\pages",
-    "\\src\\pages\\pensieve",
-    "\\src\\styles"
+    "\\src\\styles",
+    "\\src\\templates"
   ],
-  "SelectedNode": "\\src\\pages\\archive.js",
   "PreviewInSolutionExplorer": false
 }

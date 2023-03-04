@@ -17,8 +17,6 @@ const StyledAboutSection = styled.section`
       display: block;
     }
   }
-
-
 `;
 const StyledText = styled.div`
   ul.skills-list {
@@ -127,7 +125,14 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', '.NET/.NET Core', 'AngularJS/Angular', 'React', 'SQL', 'HTML & (S)CSS'];
+  const skills = [
+    'JavaScript/Typescript (ES6+)',
+    '.NET/.NET Core /Vb.NET',
+    'AngularJS/Angular',
+    'React with redux toolkit',
+    'SQL',
+    'HTML, (S)CSS and styled components',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -138,15 +143,16 @@ const About = () => {
           <div>
             <p>
               Hello! My name is Pedram and I enjoy creating things that live on the internet. My
-              interest in web development started back when i was a kid playing around in dev tools at those Flash games.
-              — turns out hacking simple web games for more life taught me a little
-              Javascript &amp; HTML - and a lot of DevTools!
+              interest in web development and software development started back when i was a kid
+              playing around in DevTools while playing diffrent flash games. — turns out hacking
+              simple web games for more life taught me a little Javascript &amp; HTML - and a lot of
+              DevTools!
             </p>
 
             <p>
-              My main focus these days is building .NET applications accessible, inclusive products and digital
-              experiences at <a href="https://skandia.se/">Skandiabanken</a> for a
-              variety of clients.
+              My main focus these days is building .NET applications accessible, inclusive products
+              and digital experiences at <a href="https://skandia.se/">Skandiabanken</a> for a
+              variety of clients. My teams main focus is in building advisory tools.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
