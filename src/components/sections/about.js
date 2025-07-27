@@ -126,7 +126,7 @@ const About = () => {
   }, []);
 
   const skills = [
-    'JavaScript/Typescript (ES6+)',
+    'JavaScript/Typescript',
     '.NET/.NET Core /Vb.NET',
     'AngularJS/Angular',
     'React with redux toolkit',

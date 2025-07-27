@@ -2,8 +2,8 @@
 date: '3'
 title: 'Placeholder'
 cover: './lorem2.jpg'
-external: 'https://www.newline.co/courses/build-a-spotify-connected-app'
-cta: 'https://www.newline.co/courses/build-a-spotify-connected-app'
+external: ''
+cta: ''
 tech:
   - C# .NET/.NET Core
   - SQL

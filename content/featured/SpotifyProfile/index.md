@@ -2,8 +2,8 @@
 date: '2'
 title: 'Placeholder'
 cover: './lorem.jpg'
-github: 'https://github.com/bchiang7/spotify-profile'
-external: 'https://spotify-profile.herokuapp.com/'
+github: ''
+external: ''
 tech:
   - C# .NET/.NET Core
   - SQL
