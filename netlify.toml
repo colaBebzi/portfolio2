@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # @netlify/plugin-gatsby is enabled in the site's build plugin settings from a
+  # previous Gatsby setup, but this is a Vite project. This env var is the
+  # plugin's documented way to no-op itself when it isn't wanted.
+  NETLIFY_SKIP_GATSBY_BUILD_PLUGIN = "true"
