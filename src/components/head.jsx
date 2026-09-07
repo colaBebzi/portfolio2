@@ -1,28 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
-
-// https://www.gatsbyjs.com/docs/add-seo-component/
+import { useLocation } from 'react-router-dom';
 
 const Head = ({ title, description, image }) => {
   const { pathname } = useLocation();
-
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl
-            defaultImage: image
-          }
-        }
-      }
-    `,
-  );
 
   const {
     defaultTitle,
@@ -30,7 +12,13 @@ const Head = ({ title, description, image }) => {
     siteUrl,
     defaultImage,
     //twitterUsername,
-  } = site.siteMetadata;
+  } = {
+    defaultTitle: 'Pedram Khatibi',
+    defaultDescription:
+      'Pedram Khatibi is a software developer who specializes in building exceptional digital experiences.',
+    siteUrl: 'https://pedramkhatibi.netlify.com',
+    defaultImage: '/og.png',
+  };
 
   const seo = {
     title: title || defaultTitle,

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import headshot from '@images/sus1.jpg';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -165,12 +165,10 @@ const About = () => {
 
         <StyledPic>
           <div className="wrapper">
-            <StaticImage
+            <img
               className="img"
-              src="../../images/sus1.jpg"
-              width={500}
-              quality={95}
-              formats={['AUTO', 'WEBP', 'AVIF']}
+              src={headshot}
+              width="500"
               alt="Headshot"
             />
           </div>

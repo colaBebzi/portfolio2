@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -8,6 +7,7 @@ import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { projects } from '@content';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -129,8 +129,8 @@ const StyledTableContainer = styled.div`
   }
 `;
 
-const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+const ArchivePage = ({ location }) => {
+  const projectEdges = projects.map(node => ({ node }));
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
@@ -168,8 +168,8 @@ const ArchivePage = ({ location, data }) => {
               </tr>
             </thead>
             <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
+              {projectEdges.length > 0 &&
+                projectEdges.map(({ node }, i) => {
                   const {
                     date,
                     github,
@@ -237,31 +237,7 @@ const ArchivePage = ({ location, data }) => {
 };
 ArchivePage.propTypes = {
   location: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
 };
 
 export default ArchivePage;
 
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            title
-            tech
-            github
-            external
-            android
-            company
-          }
-          html
-        }
-      }
-    }
-  }
-`;

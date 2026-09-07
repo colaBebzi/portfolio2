@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { featured } from '@content';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
@@ -304,34 +303,7 @@ const StyledProject = styled.li`
 `;
 
 const Featured = () => {
-  const data = useStaticQuery(graphql`
-    {
-      featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/featured/" } }
-        sort: { fields: [frontmatter___date], order: ASC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              cover {
-                childImageSharp {
-                  gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-                }
-              }
-              tech
-              github
-              external
-              cta
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
+  const featuredProjects = featured.map(node => ({ node }));
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -356,7 +328,6 @@ const Featured = () => {
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover, cta } = frontmatter;
-            const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -403,7 +374,7 @@ const Featured = () => {
 
                 <div className="project-image">
                   <a href={external ? external : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
+                    <img src={cover} alt={title} className="img" />
                   </a>
                 </div>
               </StyledProject>

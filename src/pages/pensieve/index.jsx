@@ -1,11 +1,11 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
 import { IconBookmark } from '@components/icons';
+import { posts } from '@content';
 
 const StyledMainContainer = styled.main`
   & > header {
@@ -142,8 +142,8 @@ const StyledPost = styled.li`
   }
 `;
 
-const PensievePage = ({ location, data }) => {
-  const posts = data.allMarkdownRemark.edges;
+const PensievePage = ({ location }) => {
+  const postEdges = posts.map(node => ({ node }));
 
   return (
     <Layout location={location}>
@@ -160,10 +160,10 @@ const PensievePage = ({ location, data }) => {
         </header>
 
         <StyledGrid>
-          {posts.length > 0 &&
-            posts.map(({ node }, i) => {
+          {postEdges.length > 0 &&
+            postEdges.map(({ node }, i) => {
               const { frontmatter } = node;
-              const { title, description, slug, date, tags } = frontmatter;
+              const { title, description, slug, date } = frontmatter;
               const formattedDate = new Date(date).toLocaleDateString();
 
               return (
@@ -203,30 +203,7 @@ const PensievePage = ({ location, data }) => {
 
 PensievePage.propTypes = {
   location: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
 };
 
 export default PensievePage;
 
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/posts/" }, frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            slug
-            date
-            tags
-            draft
-          }
-          html
-        }
-      }
-    }
-  }
-`;

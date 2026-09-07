@@ -1,10 +1,11 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { Link, Navigate } from 'react-router-dom';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import { posts } from '@content';
 
 const StyledPostContainer = styled.main`
   max-width: 1000px;
@@ -50,8 +51,10 @@ const StyledPostContent = styled.div`
   }
 `;
 
-const PostTemplate = ({ data, location }) => {
-  const { frontmatter, html } = data.markdownRemark;
+const PostTemplate = ({ slug, location }) => {
+  const post = posts.find(({ frontmatter }) => frontmatter.slug === slug);
+  if (!post) {return <Navigate to="/404" replace />;}
+  const { frontmatter, html } = post;
   const { title, date, tags } = frontmatter;
 
   return (
@@ -94,21 +97,7 @@ const PostTemplate = ({ data, location }) => {
 export default PostTemplate;
 
 PostTemplate.propTypes = {
-  data: PropTypes.object,
+  slug: PropTypes.string.isRequired,
   location: PropTypes.object,
 };
 
-export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        title
-        description
-        date
-        slug
-        tags
-      }
-    }
-  }
-`;

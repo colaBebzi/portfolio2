@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'react-router-dom';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import { posts } from '@content';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;
@@ -45,9 +46,14 @@ const StyledTagsContainer = styled.main`
   }
 `;
 
-const TagTemplate = ({ pageContext, data, location }) => {
-  const { tag } = pageContext;
-  const { edges } = data.allMarkdownRemark;
+const TagTemplate = ({ tagSlug, location }) => {
+  const matchingPosts = posts.filter(({ frontmatter }) =>
+    (frontmatter.tags || []).some(tag => kebabCase(tag) === tagSlug),
+  );
+  const tag = matchingPosts.flatMap(({ frontmatter }) => frontmatter.tags).find(item =>
+    kebabCase(item) === tagSlug,
+  ) || tagSlug;
+  const edges = matchingPosts.map(node => ({ node }));
 
   return (
     <Layout location={location}>
@@ -103,45 +109,7 @@ const TagTemplate = ({ pageContext, data, location }) => {
 export default TagTemplate;
 
 TagTemplate.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired,
-      ),
-    }),
-  }),
+  tagSlug: PropTypes.string.isRequired,
   location: PropTypes.object,
 };
 
-export const pageQuery = graphql`
-  query($tag: String!) {
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            date
-            slug
-            tags
-          }
-        }
-      }
-    }
-  }
-`;

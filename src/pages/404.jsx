@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';

@@ -1,4 +1,14 @@
 {
   "root": true,
-  "extends": "@upstatement/eslint-config/react"
+  "extends": "@upstatement/eslint-config/react",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'react-router-dom';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
+import { tags } from '@content';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;
@@ -31,12 +32,7 @@ const StyledTagsContainer = styled.main`
   }
 `;
 
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-  },
-  location,
-}) => (
+const TagsPage = ({ location }) => (
   <Layout location={location}>
     <Helmet title="Tags" />
 
@@ -48,7 +44,7 @@ const TagsPage = ({
 
       <h1>Tags</h1>
       <ul className="fancy-list">
-        {group.map(tag => (
+        {tags.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/pensieve/tags/${kebabCase(tag.fieldValue)}/`} className="inline-link">
               {tag.fieldValue} <span className="count">({tag.totalCount})</span>
@@ -61,33 +57,8 @@ const TagsPage = ({
 );
 
 TagsPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired,
-      ),
-    }),
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }),
-    }),
-  }),
   location: PropTypes.object,
 };
 
 export default TagsPage;
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(limit: 2000, filter: { frontmatter: { draft: { ne: true } } }) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`;
