@@ -64,11 +64,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software developer specializing in building and finding soloutions to exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://www.skandia.se/" target="_blank" rel="noreferrer">
-          Skandiabanken
+        I’m a fullstack developer building tools that make everyday work easier. Currently, I’m
+        developing internal systems at{' '}
+        <a href="https://www.ocab.se/" target="_blank" rel="noreferrer">
+          Ocab
         </a>
         .
       </p>

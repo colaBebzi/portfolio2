@@ -128,12 +128,12 @@ const About = () => {
   }, []);
 
   const skills = [
-    'JavaScript/Typescript',
-    '.NET/.NET Core /Vb.NET',
-    'AngularJS/Angular',
-    'React with redux toolkit',
-    'SQL',
-    'HTML, (S)CSS and styled components',
+    'C# / .NET',
+    'Vue / React',
+    'JavaScript / TypeScript',
+    'SQL / Cosmos DB',
+    'Azure',
+    'Microsoft Foundry',
   ];
 
   return (
@@ -152,9 +152,9 @@ const About = () => {
             </p>
 
             <p>
-              My main focus these days is building .NET applications accessible, inclusive products
-              and digital experiences at <a href="https://skandia.se/">Skandiabanken</a> for a
-              variety of clients. My teams main focus is in building advisory tools.
+              I currently work as a fullstack developer at <a href="https://www.ocab.se/">Ocab</a>,
+              building internal systems for supervisors and technicians. Our tools support their
+              daily work, from creating work orders to invoicing.
             </p>
 
             <p>
