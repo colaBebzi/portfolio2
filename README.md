@@ -26,7 +26,3 @@ The production output is written to `dist/`. The included Netlify `_redirects` r
 ## Content
 
 Portfolio content lives in `content/` as Markdown with YAML frontmatter. Vite imports and renders it at build time.
-
-## Design inspiration
-
-Design inspired by [brittanychiang.com](https://brittanychiang.com).
