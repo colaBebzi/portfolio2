@@ -1,5 +1,5 @@
 ---
-title: 'Fullstack Developer'
+title: 'Senior Developer'
 company: 'Ocab AB'
 location: 'Stockholm, Sweden'
 range: 'October 2025 - Current'
