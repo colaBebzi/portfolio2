@@ -11,4 +11,4 @@ tech:
   - Pathfinding
 ---
 
-A hands-on pathfinding playground, rebuilt from React with **Vue 3 and Vite**. Draw walls, drag endpoints, and generate mazes to explore **Dijkstra, A\*, BFS, and DFS**. Follow each search with pause and step controls, adjustable animation speed, and live path metrics in a responsive, keyboard-accessible interface.
+A hands-on pathfinding playground, built with **Vue 3 and Vite**. Draw walls, drag endpoints, and generate mazes to explore **Dijkstra, A\*, BFS, and DFS**. Follow each search with pause and step controls, adjustable animation speed, and live path metrics in a responsive, keyboard-accessible interface.

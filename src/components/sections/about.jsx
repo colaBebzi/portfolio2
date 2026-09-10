@@ -6,9 +6,11 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledAboutSection = styled.section`
-  max-width: 900px;
+  max-width: 1000px;
 
   .inner {
+    max-width: 900px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 50px;
@@ -153,6 +155,12 @@ const About = () => {
               My main focus these days is building .NET applications accessible, inclusive products
               and digital experiences at <a href="https://skandia.se/">Skandiabanken</a> for a
               variety of clients. My teams main focus is in building advisory tools.
+            </p>
+
+            <p>
+              I also co-own <a href="https://astrovia.se/">Astrovia</a>. We offer web design and development,
+              from initial strategy and design to launch, hosting, and ongoing maintenance,
+              with a focus on performance, accessibility, and long-term quality.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

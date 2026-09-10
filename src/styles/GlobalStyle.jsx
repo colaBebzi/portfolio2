@@ -181,8 +181,8 @@ const GlobalStyle = createGlobalStyle`
 
 .glass-effect {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    -webkit-backdrop-filter: blur(20x);
-    backdrop-filter: blur(20x);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 32px;
@@ -191,8 +191,8 @@ const GlobalStyle = createGlobalStyle`
 
 .glass-effect-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    -webkit-backdrop-filter: blur(20x);
-    backdrop-filter: blur(20x);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 32px;
@@ -207,6 +207,22 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;
+
+    &.glass-effect {
+      @media (max-width: 600px) {
+        white-space: normal;
+        line-height: 1.2;
+
+        &:before {
+          flex-shrink: 0;
+          bottom: 0;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    }
 
     &:before {
       position: relative;

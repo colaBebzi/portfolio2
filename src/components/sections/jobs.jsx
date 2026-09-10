@@ -8,10 +8,12 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
+  max-width: 1000px;
 
   .inner {
     display: flex;
+    max-width: 900px;
+    margin: 0 auto;
 
     @media (max-width: 600px) {
       display: block;
@@ -28,6 +30,7 @@ const StyledTabList = styled.div`
   position: relative;
   z-index: 3;
   width: max-content;
+  flex-shrink: 0;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -86,7 +89,8 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
+    flex: 0 0 var(--tab-width);
+    width: var(--tab-width);
     padding: 0 15px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
@@ -129,6 +133,7 @@ const StyledHighlight = styled.div`
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
+  min-width: 0;
   margin-left: 20px;
 
   @media (max-width: 600px) {
